@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-class WeatherScraper:
+class weather_Scraper:
     def __init__(self, url):
         """
         Initialize WeatherScraper with the URL of the weather forecast page.
@@ -74,13 +74,3 @@ class WeatherScraper:
         else:
             print("No weather data to create DataFrame.")
             return None
-
-## The Weather Data can be used like this by usin the below scraping tools.
-weather_url = "https://forecast.weather.gov/MapClick.php?lat=40.714530000000025&lon=-74.00711999999999"
-weather_scraper = WeatherScraper(weather_url)
-html_content = weather_scraper.fetch_html()
-weather_data = weather_scraper.scrape_weather_data(html_content)
-weather_df = weather_scraper.create_dataframe(weather_data)
-
-if weather_df is not None:
-    print(weather_df)

@@ -6,7 +6,7 @@ import pandas as pd
 from urllib.parse import urljoin
 from xml.etree import ElementTree as ET
 
-class SitemapParser:
+class sitemap_Parser:
     """
     A Class to fetch the Data from NBC News .com
     """
@@ -84,13 +84,3 @@ class SitemapParser:
         else:
             print("No data found in sitemaps.")
             return None
-
-# Example usage
-base_website = "https://www.nbcnews.com/"
-sitemap_parser = SitemapParser(base_website)
-robots_txt = sitemap_parser.fetch_robots_txt()
-sitemap_parser.extract_sitemaps(robots_txt)
-sitemap_df = sitemap_parser.parse_sitemaps_to_dataframe()
-
-if sitemap_df is not None:
-    print(sitemap_df)  # Display the rows of the DataFrame

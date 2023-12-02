@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "WEB_DATA"
+authors = [
+    {name = "aquib hussain"}
+]
+description = "Web Data from scraping,API,XML parsing"
+readme = "README.md"
+keywords = ["data visualization", "crime", "Analytics Programming"]
+license = {text = "MIT License"}
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.3",
+    "numpy>=1.20",
+    "pandas>=1.4",
+    "seaborn>=0.13.0",
+    "beautifulsoup4>=4.10.0",
+    "requests>=2.27.1"
+]
+version="2.0"
+
+[project.urls]
+Repository = "https://github.com/Aquibgitt/WEB_DATA"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
