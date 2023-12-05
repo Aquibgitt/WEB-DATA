@@ -1,5 +1,5 @@
 # EARTHQUAKE_API_Aquib_Hussain 
-
+"""Importing the Libraries"""
 import requests
 import pandas as pd
 import matplotlib.pyplot as plt

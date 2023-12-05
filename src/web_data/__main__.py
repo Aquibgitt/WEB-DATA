@@ -1,6 +1,6 @@
 """for main"""
-from .earthquake_api import eda_Exploration
-from .the_inference import inference_Analysis
+from .earthquake_api import eda_Summary
+from .web_scraping import WeatherScraper
 
 from .nbc_news import  SitemapParser
 
