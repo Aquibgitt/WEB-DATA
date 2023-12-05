@@ -1,6 +1,6 @@
 """for main"""
 from .earthquake_api import eda_Summary
-from .web_scraping import WeatherScraper
+from .web_scraping import weather_Scraper
 
 from .nbc_news import  SitemapParser
 
@@ -41,7 +41,7 @@ def earthquake_api():
 def web_scraping():
     ## The Weather Data can be used like this by usin the below scraping tools.
     weather_url = "https://forecast.weather.gov/MapClick.php?lat=40.714530000000025&lon=-74.00711999999999"
-    weather_scraper = WeatherScraper(weather_url)
+    weather_scraper = weather_Scraper(weather_url)
     html_content = weather_scraper.fetch_html()
     weather_data = weather_scraper.scrape_weather_data(html_content)
     weather_df = weather_scraper.create_dataframe(weather_data)
