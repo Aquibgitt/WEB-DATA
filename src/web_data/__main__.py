@@ -1,7 +1,7 @@
 """for main"""
 from .earthquake_api import eda_Summary
 from .web_scraping import weather_Scraper
-
+from .earthquake_api import usgs_Earthquake_Fetcher
 from .nbc_news import  sitemap_Parser
 
 def XML():
@@ -24,18 +24,20 @@ def main():
     web_scraping()
 
 
-
 def earthquake_api():
+    earthquake_fetcher = usgs_Earthquake_Fetcher("2020-01-01", "2020-01-02")
+    earthquake_data = earthquake_fetcher.fetch_data()
+    data = earthquake_fetcher.parse_to_dataframe(earthquake_data)
     print("EDA start---------------------------------------")
-    eda_Summary.plot_histogram()
-    eda_Summary.plot_depth_histogram()
-    eda_Summary.plot_latitude_longitude()
-    eda_Summary.plot_top_places()
-    eda_Summary.plot_magnitude_ranges()
-    eda_Summary.plot_pairplot_numerical()
-    eda_Summary.plot_violin_magnitude_by_depth()
-    eda_Summary.plot_scatter_matrix_kde()
-    eda_Summary.plot_correlation_matrix()
+    eda_Summary.plot_histogram(data)
+    eda_Summary.plot_depth_histogram(data)
+    eda_Summary.plot_latitude_longitude(data)
+    eda_Summary.plot_top_places(data)
+    eda_Summary.plot_magnitude_ranges(data)
+    eda_Summary.plot_pairplot_numerical(data)
+    eda_Summary.plot_violin_magnitude_by_depth(data)
+    eda_Summary.plot_scatter_matrix_kde(data)
+    eda_Summary.plot_correlation_matrix(data)
 
     print("EDA ends----------------------------------------")
 def web_scraping():
