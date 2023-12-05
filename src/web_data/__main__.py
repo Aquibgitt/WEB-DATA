@@ -2,11 +2,11 @@
 from .earthquake_api import eda_Summary
 from .web_scraping import weather_Scraper
 
-from .nbc_news import  SitemapParser
+from .nbc_news import  sitemap_Parser
 
 def XML():
     base_website = "https://www.nbcnews.com/"
-    sitemap_parser = SitemapParser(base_website)
+    sitemap_parser = sitemap_Parser(base_website)
     robots_txt = sitemap_parser.fetch_robots_txt()
     print(robots_txt)
     sitemap_parser.extract_sitemaps(robots_txt)
